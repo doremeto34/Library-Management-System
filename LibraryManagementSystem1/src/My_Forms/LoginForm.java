@@ -222,14 +222,18 @@ public class LoginForm extends javax.swing.JFrame {
             try {
                 ps = DB.getConnection().prepareStatement(query);
                 ps.setString(1, username);
-                ps.setString(2, password);
-                
+                ps.setString(2, password); 
+               
                 rs = ps.executeQuery();
-                
+                // check if user exists
                 if(rs.next()){
-                    System.out.println("YES");
+                    // display dashboard
+                    DashboardForm dash_f = new DashboardForm();
+                    dash_f.setVisible(true);
+                    // close
+                    this.dispose();
                 }else{
-                    System.out.println("NO");
+                    JOptionPane.showMessageDialog(null, "Invalid username or password","Empty fields",2);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);

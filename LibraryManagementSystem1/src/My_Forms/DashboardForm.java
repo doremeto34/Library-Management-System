@@ -70,12 +70,12 @@ public class DashboardForm extends javax.swing.JFrame {
                 JButton button = (JButton) comp;
                 //add action
                 button.addMouseListener(new MouseAdapter(){
-                    //@Override
-                    public void MouseEntered(MouseEvent evt){
+                    @Override
+                    public void mouseEntered(MouseEvent evt){
                         button.setBorder(buttonBorder1);
                     }
-                    //@Override
-                    public void MouseExited(MouseEvent evt){
+                    @Override
+                    public void mouseExited(MouseEvent evt){
                         button.setBorder(buttonBorder0);
                     }
                 }) ;
